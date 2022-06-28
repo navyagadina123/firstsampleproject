@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+  
+<bean id="address1" class="com.cg.model.Address">  
+<property name="street" value="Rajajinagar"></property>  
+<property name="city" value="sindhanur"></property>  
+<property name="state" value="karnataka"></property>  
+<property name="zipcode" value="518412"></property>
+<property name="country" value="India"></property>  
+</bean>  
+  
+<bean id="obj" class="com.cg.model.Customer">  
+<property name="customerId" value="1"></property>  
+<property name="customerName" value="Navya"></property>  
+<property name="customerContact" value="7768021123"></property>
+<property name="address" ref="address1"></property>  
+</bean>
+
+<bean id="a1" class="com.cg.model.Address">  
+<constructor-arg value="Gandhinagar"></constructor-arg>  
+<constructor-arg value="karanataka"></constructor-arg>  
+<constructor-arg value="Raichur"></constructor-arg>  
+<constructor-arg value="1245" type="int"></constructor-arg>  
+<constructor-arg value="India"></constructor-arg>  
+</bean>  
+  
+  
+<bean id="e11" class="com.cg.model.Customer">  
+<constructor-arg value="12" type="int"></constructor-arg>  
+<constructor-arg value="Sonoo"></constructor-arg>
+ <constructor-arg value="77689654"></constructor-arg>
+<constructor-arg>  <ref bean="a1"/>  
+</constructor-arg>  
+</bean>
+
+  
+  </beans>
